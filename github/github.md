@@ -1,5 +1,10 @@
+#### 配置ssh的key
+[链接](https://www.jianshu.com/p/9317a927e844)
+
 #### 克隆代码
+```
 git clone xxx  //ssh的地址
+```
 
 #### 提交代码四部曲
 ```
