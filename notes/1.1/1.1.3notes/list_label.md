@@ -1,7 +1,7 @@
 #### 无序列表 unordered list
 ```
 <ul>
-    <li>面包</li>  //list item
+    <li>面包</li>  <!--list item -->
     <li>牛奶</li>
     <li>水果</li>
 </ul>
