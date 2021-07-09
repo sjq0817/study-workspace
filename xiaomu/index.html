@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- 网页的头部 -->
-    <div class="header">
+    <header>
         <!-- 网页logo和工具 -->
         <div class="logo-and-tool">
             <div class="logo">
@@ -18,11 +18,20 @@
             </div>
             <!-- 网页的工具块 -->
             <div class="tool">
-
+                <div class="r1">
+                    <img src="images/tel.png" alt="电话">
+                    <span>088-88888888</span>
+                    <a href=""><img src="images/chinese_icon.png" alt=""></a>
+                    <a href=""><img src="images/english_icon.png" alt=""></a>
+                </div>
+                <div class="r2">
+                    <input type="text" placeholder="找医生/科室...">
+                    <img src="images/search.png" alt="">
+                </div>
             </div>
         </div>
         <!-- 导航栏 -->
-        <div class="nav">
+        <nav class="main-nav">
             <ul>
                 <li>首页</li>
                 <li>医院概况</li>
@@ -34,10 +43,12 @@
                 <li>互动交流</li>
             </ul>
 
-        </div>
-    </div>
+        </nav>
+    </header>
     <!-- 网页的横幅 -->
-    <div class="banner">
+    <section class="banner">
+        <img src="images/banner.png" alt="">
+        <h2>责任、科学、严谨</h2>
         <!-- 小圆点 -->
         <ol>
             <li></li>
@@ -46,18 +57,48 @@
             <li></li>
         </ol>
 
-    </div>
+    </section>
     <!-- 网页的内容 -->
-    <div class="content">
+    <section class="content">
         <!-- 常用链接 -->
         <div class="useful-links">
             <ul>
-                <li>就诊须知</li>
-                <li>就医流程</li>
-                <li>专家介绍</li>
-                <li>科室介绍</li>
-                <li>医保就医</li>
-                <li>健康体检</li>
+                <li>
+                    <a href="">
+                        <img src="images/icon_jzxz.png" alt="">
+                        <span>就诊须知</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/icon_jylc.png" alt="">
+                        <span>就医流程</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/icon_zjjs.png" alt="">
+                        <span>专家介绍</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/icon_ksjs.png" alt="">
+                        <span>科室介绍</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/icon_ybjy.png" alt="">
+                        <span>医保就医</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/icon_jktj.png" alt="">
+                        <span>健康体检</span>
+                    </a>
+                </li>
             </ul>
 
         </div>
@@ -65,77 +106,84 @@
         <div class="news-and-notice">
             <!-- 医院动态 -->
             <div class="news">
-                <h2>医院动态</h2>
+                <h3>医院动态</h3>
                 <div class="news-content">
                     <div class="news-pic">
                         <!-- 医院动态的图片 -->
+                        <a href="">
+                            <img src="images/news_pic.png" alt="">
+                            <div>
+                                “全国首届健康预防与商业医疗保险论坛”在北京医院举办
+                            </div>
+                        </a>
 
                     </div>
                     <div class="news-word">
                         <ul>
-                            <li>年度医疗机构用血自查评分表和科室基本信息表</li>
-                            <li>关于上报北京市医疗机构临床用血信息的通知</li>
-                            <li>北京医院输血科通过验收并获批开展“临床基…</li>
-                            <li>国家药品监督管理局关于修订都梁软胶囊非处…</li>
-                            <li>关于将多拉司琼注射剂等药品纳入本市基本医…</li>
-                            <li>关于调整完善本市基本医疗保险门诊特殊疾病…</li>
-                            <li>广东省药学会：关于印发《超药品说明书用药…</li>
-                            <li>人力资源社会保障部关于将36种药品纳入国家…</li>
+                            <li><a href="" >年度医疗机构用血自查评分表和科室基本信息表</a></li>
+                            <li><a href="" >关于上报北京市医疗机构临床用血信息的通知</a></li>
+                            <li><a href="" >北京医院输血科通过验收并获批开展“临床基…</a></li>
+                            <li><a href="" >国家药品监督管理局关于修订都梁软胶囊非处…</a></li>
+                            <li><a href="" >关于将多拉司琼注射剂等药品纳入本市基本医…</a></li>
+                            <li><a href="" >关于调整完善本市基本医疗保险门诊特殊疾病…</a></li>
+                            <li><a href="" >广东省药学会：关于印发《超药品说明书用药…</a></li>
+                            <li><a href="" >人力资源社会保障部关于将36种药品纳入国家…</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- 医院公告 -->
             <div class="notice">
-                <h2>医院公告</h2>
+                <h3>医院公告</h3>
                 <ol>
                     <li>
                         <dl>
                             <dt>
-                                <p>《养生堂》</p>
+                                <a href=""><p>《养生堂》</p></a>
                             </dt>
                             <dd>
-                                <p>公郭立新主任 特殊时期糖尿病人的新冠…</p>
+                               <a href=""> <p>公郭立新主任 特殊时期糖尿病人的新冠…</p></a>
                             </dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dt>
-                                <p>《养生堂》</p>
+                                <a href=""><p>《养生堂》</p></a>
                             </dt>
                             <dd>
-                                <p>王少为主任 新型冠状病毒防控指引十八…</p>
+                                <a href=""><p>王少为主任 新型冠状病毒防控指引十八…</p></a>
                             </dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dt>
-                                <p>《我要当医生》</p>
+                                <a href=""><p>《我要当医生》</p></a>
                             </dt>
                             <dd>
-                                <p>谭玲副主任 李同舟 姚晨蕊药师</p>
+                                <a href=""><p>谭玲副主任 李同舟 姚晨蕊药师</p></a>
                             </dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dt>
-                                <p>《全民健康学院》</p>
+                                <a href=""><p>《全民健康学院》</p></a>
                             </dt>
                             <dd>
-                                <p>王建业院长 “医”路有你 健康同行</p>
+                                <a href=""><p>王建业院长 “医”路有你 健康同行</p></a>
+                                
                             </dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dt>
-                                <p>《健康背景》</p>
+                                <a href=""> <p>《健康背景》</p></a>
                             </dt>
                             <dd>
-                                <p>王建业院长 莫把衰老当病治</p>
+                                <a href=""><p>王建业院长 莫把衰老当病治</p></a>
                             </dd>
                         </dl>
                     </li>
@@ -143,73 +191,75 @@
             </div>
         </div>
         <!-- 宣传图片 -->
-        <div class="ad-image">
-            
-        </div>
+        <aside class="ad-image">
+            <a href="">
+                <img src="images/xuanchuan.png" alt="">
+            </a>
+        </aside>
         <!-- 科室介绍 -->
         <div class="dep-info">
-            <h2>科室介绍</h2>
+            <h3>科室介绍</h3>
             <div class="dep-content">
                 <div>
-                    <h3>内科</h3>
+                    <h4>内科</h4>
                     <ul>
-                        <li>呼吸内科</li>
-                        <li>消化外科</li>
-                        <li>神经内科</li>
-                        <li>心血管内科</li>
-                        <li>肾内科</li>
-                        <li>血液内科</li>
-                        <li>免疫科</li>
-                        <li>内分泌科</li>
+                        <li><a href="">呼吸内科</a></li>
+                        <li><a href="">消化外科</a></li>
+                        <li><a href="">神经内科</a></li>
+                        <li><a href="">心血管内科</a></li>
+                        <li><a href="">肾内科</a></li>
+                        <li><a href="">血液内科</a></li>
+                        <li><a href="">免疫科</a></li>
+                        <li><a href="">内分泌科</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>肿瘤科</h3>
+                    <h4>肿瘤科</h4>
                     <ul>
-                        <li>肿瘤内科</li>
-                        <li>肿瘤外科</li>
-                        <li>肿瘤妇科</li>
-                        <li>骨肿瘤科</li>
-                        <li>放疗科</li>
-                        <li>肿瘤康复科</li>
-                        <li>肿瘤综合科</li>
+                        <li><a href="">肿瘤内科</a></li>
+                        <li><a href="">肿瘤外科</a></li>
+                        <li><a href="">肿瘤妇科</a></li>
+                        <li><a href="">骨肿瘤科</a></li>
+                        <li><a href="">放疗科</a></li>
+                        <li><a href="">肿瘤康复科</a></li>
+                        <li><a href="">肿瘤综合科</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>外科</h3>
+                    <h4>外科</h4>
                     <ul>
-                        <li>普通外科</li>
-                        <li>普通内科</li>
-                        <li>心胸外科</li>
-                        <li>心胸内科</li>
-                        <li>肝脏外科</li>
-                        <li>肛肠外科</li>
-                        <li>心血管外科</li>
-                        <li>烧伤科</li>
-                        <li>骨外科</li>
-                        <li>乳腺外科</li>
+                        <li><a href="">普通外科</a></li>
+                        <li><a href="">普通内科</a></li>
+                        <li><a href="">心胸外科</a></li>
+                        <li><a href="">心胸内科</a></li>
+                        <li><a href="">肝脏外科</a></li>
+                        <li><a href="">肛肠外科</a></li>
+                        <li><a href="">心血管外科</a></li>
+                        <li><a href="">烧伤科</a></li>
+                        <li><a href="">骨外科</a></li>
+                        <li><a href="">乳腺外科</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>儿科</h3>
+                    <h4>儿科</h4>
                     <ul>
-                        <li>儿科综合</li>
-                        <li>小儿内科</li>
-                        <li>小儿外科</li>
-                        <li>新生儿科</li>
-                        <li>儿童营养科</li>
-                        <li>消化内科</li>
+                        <li><a href="">儿科综合</a></li>
+                        <li><a href="">小儿内科</a></li>
+                        <li><a href="">小儿外科</a></li>
+                        <li><a href="">新生儿科</a></li>
+                        <li><a href="">儿童营养科</a></li>
+                        <li><a href="">消化内科</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- 专家介绍 -->
         <div class="exp-info">
-            <h2>专家介绍</h2>
+            <h3>专家介绍</h3>
             <ul>
                 <li>
                     <div class="exp-pic">
-
+                        <a href=""><img src="images/lilin.png" alt=""></a>
                     </div>
                     <div class="exp-word">
                         <p>姓名：李琳</p>
@@ -220,7 +270,7 @@
                 </li>
                 <li>
                     <div class="exp-pic">
-
+                        <a href=""><img src="images/maoxiaohui.png" alt=""></a>
                     </div>
                     <div class="exp-word">
                         <p>姓名：毛永辉</p>
@@ -231,7 +281,7 @@
                 </li>
                 <li>
                     <div class="exp-pic">
-
+                        <a href=""><img src="images/huangcibo.png" alt=""></a>
                     </div>
                     <div class="exp-word">
                         <p>姓名：黄慈波</p>
@@ -242,7 +292,7 @@
                 </li>
                 <li>
                     <div class="exp-pic">
-
+                        <a href=""><img src="images/caosuyan.png" alt=""></a>
                     </div>
                     <div class="exp-word">
                         <p>姓名：曹素艳</p>
@@ -253,7 +303,7 @@
                 </li>
                 <li>
                     <div class="exp-pic">
-
+                        <a href=""><img src="images/chenhaibo.png" alt=""></a>
                     </div>
                     <div class="exp-word">
                         <p>姓名：陈海波</p>
@@ -264,7 +314,7 @@
                 </li>
                 <li>
                     <div class="exp-pic">
-
+                        <a href=""><img src="images/jack.png" alt=""></a>
                     </div>
                     <div class="exp-word">
                         <p>姓名：Jack</p>
@@ -276,34 +326,36 @@
             </ul>
         </div>
 
-    </div>
+    </section>
     <!-- 网页的页脚 -->
-    <div class="footer">
+    <footer>
         <!-- 友情链接 -->
+        <h3>友情链接</h3>
         <div class="friend-links">
             <ul>
-                <li>院长信箱</li>
-                <li>投诉信箱</li>
-                <li>在线调查</li>
-                <li>地理位置</li>
-                <li>网站地图</li>
-                <li>网站帮助</li>
-                <li>隐私声明</li>
+                <li><a href="">院长信箱</a></li>
+                <li><a href="">投诉信箱</a></li>
+                <li><a href="">在线调查</a></li>
+                <li><a href="">地理位置</a></li>
+                <li><a href="">网站地图</a></li>
+                <li><a href="">网站帮助</a></li>
+                <li><a href="">隐私声明</a></li>
             </ul>
 
         </div>
         <!-- 小慕医生地址练习方式 -->
-        <div class="address">
+        <address>
+            <h3>小慕医生</h3>
             <ul>
-                <li>地址：北理工国防大厦111号 </li>
-                <li>电话：088-88888888 </li>
-                <li>邮箱：kefu@imooc.com </li>
-                <li>邮编：666666</li>
-                <li>网址：http://imooc.com </li>
-                <li>举报热线：088-88888888</li>
+                <li><a href="">地址：北理工国防大厦111号 </a></li>
+                <li><a href="">电话：088-88888888 </a></li>
+                <li><a href="">邮箱：kefu@imooc.com </a></li>
+                <li><a href="">邮编：666666</a></li>
+                <li><a href="">网址：http://imooc.com </a></li>
+                <li><a href="">举报热线：088-88888888</a></li>
             </ul>
-        </div>
+        </address>
      
-    </div>
+    </footer>
 </body>
 </html>
