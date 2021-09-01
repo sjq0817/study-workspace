@@ -38,7 +38,7 @@ transform: translate(100px,200px);
 transform:rotateX(30deg);
 /*后仰*/
 transform:rotateY(30deg);
-/*右仰*/
+
 ```
 ##### perspective属性
 + perspective属性用来定义透视强度，可以理解为“人眼到舞台的距离”，单位是px
@@ -49,7 +49,5 @@ transform:rotateY(30deg);
 + 一定要记住，空间移动要添加在3D旋转之后
 ```
 transform: rotateX(30deg) translateX(30px) translateY(30px) translateZ(100px);
-/*左右 前后 上下*/
+/*左右  上下 */
 ```
-##### 
-![image](https://img2.baidu.com/it/u=685204014,641452586&fm=26&fmt=auto&gp=0.jpg)

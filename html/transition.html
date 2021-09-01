@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 1200px;
+            overflow: hidden;
+            margin: 40px auto;
+        }
+        .box ul{
+            list-style: none;
+        }
+        .box ul li{
+            float: left;
+            width: 380px;
+            margin-left: 20px;
+            position: relative;
+        }
+        .box ul li img{
+            width: 380px;
+            height: 213.75px;
+        }
+        .box ul li .info{
+            position: absolute;
+            bottom: 5px;
+            width: 370px;
+            height: 30px;
+            line-height: 30px;
+            color: white;
+            padding-left: 10px;
+            background-color: rgba(0,0,0,.5);
+            /* 透明度设置为0 */
+            opacity: 0;
+            /* 过渡 */
+            transition: opacity 1s linear 0s;
+        }
+        .box ul li:hover .info{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <img src="../sundry/后羿.jpg" alt="">
+                <div class="info">后羿-黄金射手座</div>
+            </li>
+            <li>
+                <img src="../sundry/天狼运算者.jpg" alt="">
+                <div class="info">孙膑-天狼运算者</div>
+            </li>
+            <li>
+                <img src="../sundry/天鹅之梦.jpg" alt="">
+                <div class="info">小乔-天鹅之梦</div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
