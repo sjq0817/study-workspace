@@ -11,14 +11,27 @@
         margin: 0;
         padding: 0;
     }
+    section {
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        perspective: 10000px;
+    }
     .box{
         width: 200px;
         height: 200px;
-        border: 1px solid rgba(5, 1, 1,.4);
         margin: 100px auto;
-        perspective: 300px;
+        perspective: 10000px;
         position: relative;
+        /* 设置变形属性，保留它内部的3D效果 */
+        /* 这个盒子又是舞台，又是演员，这个box整体带着里面的p旋转 */
+        transform-style: preserve-3d;
+        transition: all 10s ease 0s;
     
+    }
+    section:hover .box {
+        transform: rotateX(360deg) rotateY(360deg);
+
     }
     .box p{
         position:absolute;
@@ -61,13 +74,16 @@
 </style>
 </head>
 <body>
-    <div class="box">
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-    </div>
+    <section>
+        <div class="box">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </section>
+    
 </body>
 </html>
