@@ -1,0 +1,168 @@
+/* 网页整体 */
+html {
+    width: 100%;
+    height: 100%;
+}
+    
+body {
+    background-color: #F2F2F2;
+    font-family:'Kite One', sans-serif;
+    margin: 0 0 1px;
+    color: #3F3E3C;
+    font-size: 16px;
+    height: 100%;
+}
+.container {
+    width:960px;
+    background-color:#F2F2F2; 
+    margin:0 auto;
+    position: relative;
+    }
+footer,header,nav,section {
+    display:block;
+    }
+
+        
+a:hover {
+    color:#39F;
+}
+
+p {
+    margin-bottom:7px;
+    }
+h1 {
+    font-size: 50px;
+}
+img {
+    border: none;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #000;
+    margin: 10px;
+}
+h3 {
+    text-decoration:underline;
+    }
+p {
+    margin-bottom:10px;
+    }
+/*网页头部  */
+header {
+    height: 80px;
+}
+
+.logo {
+    height: 80px;
+    margin-top: 10px;
+    line-height: 1.5;
+    float: left;
+
+}
+nav {
+    position:absolute;
+    width:600px;
+    height:40px;
+    top:30px;
+    right:-80px;
+    }
+nav ul li {
+    float:left;
+    line-height:normal;
+    margin-left:15px;
+    }
+
+nav ul li a {
+    font-size:20px;
+    font-family:'Kite One', sans-serif;
+    color:#000;
+    text-transform:capitalize;
+    font-weight:400;
+    display:block;
+    /* IE6, IE7 line height fix */
+    background-color:transparent;
+    text-decoration:none;
+    margin-top:3px;
+    padding:5px;
+    border-bottom:3px solid #333;
+    }
+/* 网页内容 */
+/* 第一块 */
+.welcome {
+    width: 920px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+/* 第二块 */
+.text-and-pic {
+    width: 920px;
+    margin: 0 auto;
+
+}
+.text {
+    float: left;
+    width:430px;
+    padding:20px 10px 0 20px;
+}
+.pic {
+    width:300px;
+    padding:20px 10px 0 20px;
+    border-left:1px dotted #DFDFDF;
+    float:left
+}
+img {
+    width: 350px;
+    height: 220px;
+    margin: 0px 0 10px 20px; 
+    background: #fff; 
+    padding: 10px; 
+    border: 1px solid #ddd;
+}
+/* 第三块 */
+.tagline {
+    width: 920px;
+    margin: 0 auto;
+    margin-top: 20px;
+    clear: both;
+}
+.box-and-desxribe {
+    width: 920px;
+    height: 220px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+section ul li {
+    float:left;
+    width: 200px;
+    height: 250px;
+    padding:10px 10px 0 15px;
+    border-right:1px dotted #DFDFDF;
+    margin-bottom: 20px;
+}
+section ul li:nth-child(4) {
+    border: none;
+}
+section ul li p {
+    margin-top: 20px;
+}
+/* 页脚 */
+footer {
+    width: 920px;
+    margin: 0 auto;
+    clear: both;
+    background-color: silver;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    line-height: 40px;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+        
+
