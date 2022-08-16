@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p>123</p>
+    <p>456</p>
+    <p>789</p>
+    <script>
+
+        // 1.认识解构赋值
+        // const [a,b,c] = [1,2,3];
+        // console.log(a,b,c);
+        // 2.什么是解构赋值
+        // 解析某一数据的解构，将我们想要的东西提取出来，赋值给变量或常量
+
+        // 模式（结构）匹配
+        // 左边是数组右边也是数组
+        // [] = [1,2,3];
+
+        // 索引值相同的完成赋值
+        // const [a,b,c] = [1,2,3];
+        // console.log(a,b,c);
+        // 不取值的直接用逗号跳过
+        // const [a,[,,b],c] = [1,[2,3,4],5];
+        // console.log(a,b,c);
+
+
+        // 1.默认值的基本用法
+        // const [a = 1,b = 2] = [];
+        // console.log(a,b);//1 2
+        // 2.默认值的生效条件
+        // 只有当一个数组成员严格等于（===）undefined时，对应的默认值才会生效
+        // const [a = 1,b = 2] = [3,0];//3 0
+        // const [a = 1,b = 2] = [3,null];//3 null
+        // const [a = 1,b = 2] = [3];//3 2
+
+        // 3.默认表达式
+        // 如果默认值是表达式，默认值表达式是惰性求恒的
+        // const fun = () =>{
+        //     console.log('我被执行了');
+        //     return 2;
+        // };
+        // const [x = fun()] = [1];
+        // console.log(x);//1
+        // const [x = fun()] = [];
+        // console.log(x);//2
+
+
+        // 1.常见的类数组的解构赋值
+        // arguments
+        // function func(){
+        //     const [a,b] = arguments;
+        //     console.log(a,b);
+
+        // }
+        // func(1,2);//1 2
+
+        // NodeList
+        // const [p1,p2,p3] = document.querySelectorAll('p');
+        // console.log(p1,p2,p3);//打印出p标签及其内容
+
+        // 2.函数参数的解构赋值
+        // const array = [1,1];
+        // // const add = (arr) => arr[0] +arr[1];
+        // const add = ([x=0,y=0]) => x + y;
+        // console.log(add(array));//2
+
+        // 3.交换变量值
+        // let x = 1;
+        // let y = 2;
+        // [x,y] = [y,x];
+        // console.log(x,y);
+
+
+        // 对象解构赋值原理
+        // 1.模式（结构）匹配
+        // {} = {}
+
+        // 2.属性名相同的完成赋值
+        // const {age,username} = {username:'Alex',age:18};
+        // const {age:age,username:username} = {username:'Alex',age:18};
+        // console.log(age,username);
+        // 取别名
+        // const {age:age,username:us} = {username:'Alex',age:18};
+        // console.log(age,us);
+
+
+        // 对象结构赋值的注意事项
+        // 1.对象结构赋值的默认值
+        // 对象的属性值严格等于undefined时，对应的默认值才会生效
+        // 2.默认表达式
+        // 如果默认值是表达式，默认值表达式是惰性求恒的
+
+
+        // 3.将一个已经声明的变量用于解构赋值
+        // 如果将一个已经声明的变量用于对象的解构赋值，整个赋值需在圆括号中进行
+        // let x = 2;
+        // ({x} = {x:1});
+
+
+        // 4.可以取到继承的属性
+        // const {toString} = {};
+        // console.log(toString);
+
+        // 对象解构赋值的应用
+        // 1.函数参数的解构赋值
+        // const logPersonInfo = ({age,name}) => console.log(name,age);
+        // logPersonInfo({name:'alex',age:18});
+
+        // 2.复杂的嵌套
+        // const obj ={
+        //     x:1,
+        //     y:[1,2,3],
+        //     z:{
+        //         a:5,
+        //         b:6
+        //     }
+        // };
+        // // const {x,y,z} = obj;
+        // // console.log(x,y,z);
+
+        // // const {y,y:[,yy]} = obj;
+        // // console.log(yy,y);//2  [1,2,3]
+
+        // const {z,z:{b}} = obj;
+        // console.log(z,b);
+
+        // 其他数据类型的解构赋值
+        // 1.字符串的解构赋值
+        // 使用数组的方式
+        // const [a,b,,,c] = `hello`;
+        // console.log(a,b,c);//h e o
+
+        // 对象形式的解构赋值
+        // 使用索引值
+        // const {0:a,length} = `hello`;
+        // console.log(a,length);//h
+
+        // 2.数值和布尔值的解构赋值
+        // 先将等号右边的值转为对象
+        // const {a = 1,toString} = 123;
+        // console.log(a);
+
+
+        // 3.undefined和null的解构赋值
+        // 由于undefined和null无法转为对象，所以对他们进行解构赋值都会报错
+
+
+
+
+
+    </script>
+</body>
+</html>

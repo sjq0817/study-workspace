@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            position: absolute; 
+            top: 100px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border-radius: 50%;
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox = document.getElementById('box');
+        // 全局变量t，l分别表示盒子的top属性值和left属性值
+        var t = 100;
+        var l = 100;
+
+        // 监听document对象的键盘按下事件监听，表示用户在整个网页按下按键的时候
+        document.onkeydown = function(e){
+            switch(e.keyCode) {
+                case 37:
+                    l -= 3;
+                    break;
+                case 38:
+                    t -= 3;
+                    break;
+                case 39:
+                    l += 3;
+                    break;
+                case 40:
+                    t += 3;
+                    break;
+            }
+            oBox.style.left = l + 'px';
+            oBox.style.top = t + 'px';
+        };
+
+    </script>
+</body>
+</html>

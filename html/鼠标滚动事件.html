@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+           
+            background-color: black;
+        }
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <p id="info"></p>
+    <script>
+        var oBox = document.getElementById('box');
+        var oInfo = document.getElementById('info');
+        var a = 0;
+        oBox.onmousewheel= function(e){
+                // 阻止默认事件，当在盒子里滚动不会引发页面上下滚动
+                e.preventDefault();
+               if(e.deltaY > 0){
+                   a--;
+               }else{
+                   a++;
+               }
+               oInfo.innerText = a;   
+        };
+       
+    </script>
+</body>
+</html>

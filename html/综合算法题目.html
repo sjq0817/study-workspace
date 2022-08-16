@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 循环嵌套
+        // for (var i = 0; i < 3; i++) {
+        //     for (var j = 0; j < 3; j++) {
+        //         console.log(i,j);
+        //     }
+        // }
+
+        // // 请寻找1~100的所有质数
+        // // 质数：只能够被1和它本身整除的数字，最小的质数是2
+        // outer: for (var i = 2; i <= 100; i++) {
+        //     // 内层循环开始从2开始尝试除i，如果能够整除，说明它不是质数，就可以筛选下一数字
+        //     for (var j = 2; j < i; j++) {
+        //         if (i % j == 0) {
+        //             // 说明数字i不是质数，因为它找到了除1和它自身之外的约数了，测试下一个数字了
+        //             // continue表示放弃这个数字，开始迭代下一个数字，continue它负责的是它所在的最内层的for循环
+        //             // 要给外层for循环加上label，然后在continue的后面加上这个label
+        //             // 这样就表示立即开始迭代外层for循环的下一个数字了，而不是内层for循环
+        //             continue outer;
+        //         }
+        //     }
+
+        //     console.log(i);
+        // }
+
+
+        // 有鸡兔同笼，上有35个头，下有94只脚，问鸡兔各有几只
+        // 方法1：
+        // for (var i = 0; i <=35 ; i++) {
+        //     for (var j = 0; j <= 35; j++) {
+        //         if (i + j == 35 && 2 * i + 4 * j == 94) {
+
+                    
+        //              console.log(i,j);
+                   
+        //         }
+        //     }
+        // }
+
+        // // 方法2：算法优化
+        // for (var i = 0; i <= 35; i++) {
+        //     var j = 35 - i;
+        //     if (2 * i + 4 * j == 94) {
+        //         console.log('小鸡有' + i + '只，兔子有' + j + '只');
+        //     }
+        // }
+
+
+
+    </script>
+</body>
+</html>

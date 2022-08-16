@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.什么是可遍历
+        // 只要是有Symbol.iterator方法,并且这个方法可以生成可遍历对象就是可遍历的
+
+
+        // 2.原生可遍历的有哪些
+        // 数组
+        // 字符串
+        // Set
+        // Map
+        // arguments
+        // NodeList
+
+
+        // 3.非原生可遍历
+        // 一般对象
+        // const person = {
+        //     name:'alex',
+        //     age:18
+        // };
+        // person[Symbol.iterator] = () =>{
+        //     let index = 0;
+        //     return {
+        //         next(){
+        //             index++;
+        //             if(index === 1){
+        //                 return {
+        //                     value:person.name,
+        //                     done:false
+        //                 }
+        //             }else if(index === 2){
+        //                 return {
+        //                     value:person.age,
+        //                     done:false
+        //                 }
+        //             }else{
+        //                 return {
+        //                     value:undefined,
+        //                     done:true
+        //                 }
+        //             }
+
+        //         }
+
+        //     }
+        // };
+        // for (const item of person){
+        //     console.log(item);
+        // }
+
+
+        // 有length和索引属性的对象
+
+        // const obj = {
+        //     0:'alex',
+        //     1:18,
+        //     length:2
+        // };
+
+        // 方法二
+        // obj[Symbol.iterator] = Array.prototype[Symbol.iterator];
+
+
+        // obj[Symbol.iterator] = () =>{
+        //     let index = 0;
+        //     return{
+        //         next(){
+        //             let value,done;
+        //             if(index < obj.length){
+        //                 value = obj[index];
+        //                 done = false;
+
+        //             }else{
+        //                 value = undefined;
+        //                 done = true;
+        //             }
+        //             index++;
+        //             return {
+        //                 value,
+        //                 done
+        //             };
+        //         }
+        //     };
+        // };
+        // for (const item of obj){
+        //     console.log(item);
+        // }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

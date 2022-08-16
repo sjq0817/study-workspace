@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            background-color: black;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点我弹出弹出层</button>
+    <div id="box"></div>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oBox = document.getElementById('box');
+
+        oBtn.onclick = function(e){
+            
+            e.stopPropagation();
+            oBox.style.display = 'block';
+
+        };
+        document.onclick = function(){
+            oBox.style.display = 'none';
+        }
+        oBox.onclick = function(e){
+            e.stopPropagation();
+        }
+
+    </script>
+</body>
+</html>

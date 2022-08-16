@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="info">0</h1>
+    <button id="btn1">开始</button>
+    <button id="btn2">暂停</button>
+    <script>
+        var a = 0;
+        // 全局变量
+        var timer;
+        var oBtn1 = document.getElementById('btn1');
+        var oInfo = document.getElementById('info');
+        var oBtn2 = document.getElementById('btn2');
+
+        
+
+        oBtn1.onclick = function(){
+            // 为了防止定时器叠加，在设置定时器之前先清除定时器
+            clearInterval(timer);
+            timer = setInterval(function(){
+                oInfo.innerText = ++a;
+            },1000);
+        };
+        oBtn2.onclick = function(){
+            clearInterval(timer);
+        };
+    </script>
+</body>
+</html>

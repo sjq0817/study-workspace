@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2020年高考倒计时</h1>
+    <h2 id="info"></h2>
+    <script>
+        var info = document.getElementById('info');
+        setInterval(function(){
+            // 在页面上实时显示距离2022年高考还有多少天，多少时，多少分，多少秒
+            
+            // 现在的日期
+            var now_date = new Date();
+            
+            // 目标日期
+            var gaokao_date = new Date(2022,5,7);
+            
+            // 毫秒差
+            var diff = now_date - gaokao_date;
+
+            // 把diff换算为天、小时、分钟、秒
+            // 换算为天
+            var day = parseInt(diff / (1000 * 60 * 60 * 24));
+            // 零多少小时？差的总毫秒数与1天的毫秒数的相除的余数，就是零头毫秒数
+            var hours = parseInt(diff % (1000 * 60 * 60 * 24) / (1000  * 60 * 60));
+            //零多少分钟？
+            var minutes = parseInt(diff % (1000 * 60 * 60 * 24) % (1000  * 60 * 60) / (1000 * 60));
+            //多少秒？？
+            var seconds = parseInt(diff % (1000 * 60 * 60 * 24) % (1000  * 60 * 60) % (1000 * 60) / 1000);
+            
+            
+            
+            info.innerText =  '距离2022高考还有' + day + '天' + hours + '小时' 
+                                + minutes + '分钟' + seconds + '秒' ;
+            
+
+
+        },1000);
+
+
+        
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

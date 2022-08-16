@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .carousel{
+            width: 650px;
+            height: 360px;
+            border: 1px solid #000;
+            margin:50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel ul{
+            list-style: none;
+            width: 5000px;
+            position: relative;
+            left: 0;
+            transition: left 1s linear 0s;
+        }
+        .carousel ul li{
+            float: left;
+        }
+        .carousel .leftbtn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            margin-top: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(38, 173, 214);
+            border-radius: 50%;
+        }
+        .carousel .rightbtn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            margin-top: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(38, 173, 214);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <ul id="list">
+            <li><img src="../sundry/0.jpg" alt=""></li>
+            <li><img src="../sundry/1.jpg" alt=""></li>
+            <li><img src="../sundry/2.jpg" alt=""></li>
+            <li><img src="../sundry/3.jpg" alt=""></li>
+            <li><img src="../sundry/4.jpg" alt=""></li>
+        </ul>
+        <a href="javascript:;" class="leftbtn" id="leftbtn"></a>
+        <a href="javascript:;" class="rightbtn" id="rightbtn"></a>
+    </div>
+    <script>
+        // 得到按钮和ul，ul整体进行运动
+
+        var leftbtn = document.getElementById('leftbtn');
+        var rightbtn = document.getElementById('rightbtn');
+        var list = document.getElementById('list');
+
+        // 克隆第一张图片
+        var cloneli = list.firstElementChild.cloneNode(true);
+        list.appendChild(cloneli);
+
+        // 当前ul的left值
+        var idx = 0;
+
+        // 节流锁
+        var lock = true;
+        //右边 监听
+        rightbtn.onclick = function(){
+            // 判断锁的状态
+            if(!lock) return;
+            // 关锁
+            lock = false;
+            // 给list加过渡，为什么要加??最后一张图片去掉过渡之后再加回来
+            list.style.transition = 'left 1s linear 0s';
+            idx ++;
+            if(idx > 4){
+                // 设置延时器，将ul瞬间拉回0的位置
+                setTimeout(function(){
+                    // 取消过渡
+                    list.style.transition = 'none';
+                    list.style.left = 0;
+                    idx = 0;
+                    
+                },500);
+            }
+            list.style.left = -idx * 650 + 'px';
+            // 函数节流
+            setTimeout(function(){
+                lock = true;
+
+            },500);
+        };
+        // 左边按钮监听
+        leftbtn.onclick = function(){
+            // 判断锁的状态
+            if(!lock) return;
+            // 关锁
+            lock = false;
+            if(idx == 0){
+                list.style.transition = 'none';
+                // 直接移动最后一张假图片
+                list.style.left = -5 * 650 + 'px';
+                
+                // 设置延时器，这个延时器的延时时间可以是0毫秒，
+                // 虽然是0毫秒但是可以让我们过渡先是瞬间取消，然后再加上
+                setTimeout(function(){
+                    list.style.transition = 'left 1s linear 0s';
+                    // 真正最后一张图片
+                    idx = 4;
+                    list.style.left = -idx * 650 + 'px';
+                },0);
+            }else{
+                idx--;
+                list.style.left = -idx * 650 + 'px';
+
+            }
+            // 函数节流
+            setTimeout(function(){
+                lock = true;
+
+            },500);
+           
+
+
+        };
+    </script>
+</body>
+</html>

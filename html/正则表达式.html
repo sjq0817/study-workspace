@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 检查某个字符串是否是6位数
+        // // 要检查的字符串
+        // var str = '456878';
+        // // 正则表达式规则
+        // var regexp1  = /^\d{6}$/;
+        // // 使用new时\d需要使用\转义也就是需要两个\
+        // var regexp2 = new RegExp('^\\d{6}$');
+        // // 检查
+        // if(regexp1.test(str)){
+        //     alert('符合规则');
+        // }else{
+        //     alert('不符合规则');
+        // }
+
+
+        // // 某快递公司运单号形式是这样的：123-456-789
+        // // 请使用正则表达式检查某字符串是否符合此格式
+
+        // var regexp1 = /^\d{3}-\d{3}-\d{3}$/;
+
+
+
+
+        // // 某产品的验证密钥形式是这样的：口口口-口口口口-口口口，
+        // // 其中口表示字母数字或者下划线，
+        // // 请使用正则表达式检查某字符串是否符合此格式
+
+        // var regexp2 = /^\w\w\w-\w\w\w\w-\w\w\w$/;
+
+
+        // var regexp3 = /^\d\d\d\.\d\d\^\d\d\#\d\d$/;
+
+        // var str1 = '123-4567-456';
+        // var str2 = '123.45^67#89';
+        // console.log(regexp1.test(str1));
+        // console.log(regexp2.test(str1));
+        // console.log(regexp3.test(str2));
+
+
+
+
+
+
+
+
+        // // exec()方法的逐条遍历
+        // var str = 'abc123def456ghi789';
+        // var regexp = /\d+/g;//有g修饰符
+        // //会进行逐条变历
+        // var result1 = regexp.exec(str);
+        // var result2 = regexp.exec(str);
+        // var result3 = regexp.exec(str);
+        // var result4 = regexp.exec(str);
+
+
+        // console.log(result1);//123
+        // console.log(result2);//456
+        // console.log(result3);//789
+        // console.log(result4);//null
+
+
+        // // 简化
+        // var result;
+        // while(result = regexp.exec(str)){
+        //     console.log(result);
+        // }
+
+
+
+
+
+            var str = 'abc123def456ghi789';
+            // search()方法,返回首次匹配到的位置索引，匹配不到返回-1
+            var result1 = str.search(/\d+/g);
+            console.log(result1);//3
+            var result2 = str.search(/\m+/g);
+            console.log(result2);//-1
+
+            // match()方法，返回一个数组，找不到则返回null
+            var result3 = str.match(/\d+/g);
+            console.log(result3);//['123', '456', '789']
+            var result4 = str.match(/[^0-9]+/g);
+            console.log(result4);//['abc', 'def', 'ghi']
+            var result5 = str.match(/[^a-z0-9]+/g);
+            console.log(result5);//null
+
+            // replace()方法，替换匹配的子字符串
+            var result6 = str.replace(/\d+/g,'*');
+            console.log(result6);//abc*def*ghi*
+            var result7 = str.replace(/\d/g,'*');
+            console.log(result6);//abc***def***ghi***
+
+
+            // split()方法，分隔字符串为数组
+            var result8 = str.split(/\d+/g);
+            console.log(result8);//['abc', 'def', 'ghi', '']
+
+
+
+    </script>
+</body>
+</html>

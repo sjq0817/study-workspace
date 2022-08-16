@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 50px 0 0 300px;
+            font-size: 22px;
+        }
+        ul{
+            padding: 0;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>学生信息表</p>
+    <ul id="list">
+        <li style="list-style: none;">信息加载中......</li>
+    </ul>
+
+    <script>
+
+        // 一般数据会从Ajax动态获取
+        const students = [
+            {
+                username:`Alex`,
+                age:18,
+                sex:`male`
+            },
+            {
+                username:`lili`,
+                age:28,
+                sex:`female`
+
+            },
+            {
+                username:`sun`,
+                age:21,
+                sex:`male`
+
+            }
+
+        ];
+
+         const list = document.getElementById('list');
+         let html=``;
+         for(let i = 0;i < students.length;i++){
+             html += `<li>我的名字是:${students[i].username},${students[i].sex},${students[i].age}</li>`;
+         }
+         list.innerHTML = html;
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

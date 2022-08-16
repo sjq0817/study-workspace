@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <p></p>
+    <p></p>
+    <p></p> -->
+
+
+    <script>
+        // 认识剩余参数
+        // const add = (x,y,z,...args) => {};
+
+        // 剩余参数的本质
+        // const add = (x,y,z,...args) => {
+        //     console.log(x,y,args);
+        // };
+        // add(1,2,3,4,5);
+        // 剩余参数永远是数组，即使没有值，也是空数组
+
+
+        // 剩余参数的注意事项
+        // 1.箭头函数的剩余参数
+        // 箭头函数的参数部分即使只有一个剩余参数，也不能省略圆括号
+        // const add = (...args) => {};
+
+
+        // 2.使用剩余参数arguments获取实际参数
+        // const add = function(){
+        //     console.log(arguments);
+        // };
+        // add(1,2);
+
+
+        // const add = (...args) =>{
+        //     console.log(args);
+        // };
+        // add(1,2);
+
+        // 3.剩余参数的位置
+        // 剩余参数只能是最后一个参数，之后不能再有其他参数，否则会报错
+
+
+        // 剩余参数的应用
+        // const add = (...args) =>{
+        //     let sum = 0;
+        //     for(let i = 0;i < args.length;i++){
+        //         sum += args[i];
+
+        //     }
+        //     return sum;
+        // };
+        // console.log(add(1,2,3,4,5,6,7,8,9,10));
+
+        // 剩余参数与解构赋值结合
+        // const [num,...args] = [1,2,3,4];
+        // console.log(num,args);//1 [2,3,4]
+        // 剩余参数与数组的解构赋值结合
+        // const func = ([num,...args]) => {
+        //     console.log(num);
+        //     console.log(args);
+        // };
+        // func([1,2,3]);
+        // 剩余参数与对象解构赋值的结合
+        // const {x,y,...z} = {a:1,b:2,x:3,y:4};
+        // console.log(x,y,z);
+        // const func = ({x,y,...z}) =>{
+        //     console.log(x,y,z);
+        // };
+        // func({a:1,b:2,x:3,y:4});
+
+        // 数组的展开运算符
+        // 1，认识展开运算符
+        // 2.数组展开运算符的基本用法
+        // console.log(Math.min(...[1,2,3]));
+        // // 等价于
+        // console.log(Math.min(1,2,3));
+
+
+
+        // 区分剩余参数和展开运算符
+        // 根本区别
+        // 剩余参数
+        // 1,2,3 → [1,2,3]
+        // 展开运算符
+        // [1,2,3] → 1,2,3
+
+
+        // 展开运算符
+        // 1.复制数组
+        // const a = [1,2];
+        // const b = [...a];
+        // console.log(b);
+
+
+        // 2.合并数组
+        // const a = [1, 2];
+        // const b = [3, 4];
+        // const c = [1, 2];
+        // console.log(...a,...b,...c);
+
+        // 3.字符串转为数组
+        // 字符串可以按照数组的形式展开
+        // const a = 'alex';
+        // console.log([...a]);//['a', 'l', 'e', 'x']
+
+
+        // 4.常见的类数组转为数组
+        // arguments
+
+        // function func(){
+        //     console.log([...arguments]);
+        // }
+        // func(1,2,3,4);
+
+        // NodeList
+        // console.log([...document.querySelectorAll('p')]);
+
+
+        // 对象展开运算符
+        // 对象不能直接展开，必须在{}中展开
+        // const apple = {
+        //     color:'red',
+        //     shape:'球'
+        // };
+        // console.log({...apple});//{color: 'red', shape: '球'}
+        // console.log({...apple} === apple);//false
+        // 对象的展开：把属性罗列出来，用逗号分隔，放到一个{}中，构成新对象
+
+        // 2.合并对象
+        // 新对象拥有全部属性相同属性，后者覆盖前者
+        // const apple = {
+        //     color:'red',
+        //     shape:'球'
+        // };
+        // const pen = {
+        //     color:'black',
+        //     use:'写字'
+
+        // };
+        // console.log({...apple,...pen});
+        // //{color: 'black', shape: '球', use: '写字'}
+        // console.log({...pen,...apple});
+        // //{color: 'red', use: '写字', shape: '球'}
+
+
+
+        // 对象展开运算符的注意事项
+        // 1.如果展开一个空对象，他没有任何效果
+        // console.log({...{}});
+        // 2.如果展开的不是对象，则会自动将其转为对象，再将其属性罗列出来
+        // console.log({...1});//{}
+        // console.log({...undefined});//{}
+        // console.log({...true});//{}
+        // console.log({...null});//{}
+        // 如果展开运算符后面是字符串，它会自动转成一个类似数组的对象，因此返回的不是空对象
+        // console.log({...'alex'});//{0: 'a', 1: 'l', 2: 'e', 3: 'x'}
+        // console.log({...[1,2,3]});//{0: 1, 1: 2, 2: 3}
+        // 3.不会展开对象中的对象属性
+        // const a = {
+        //     x:1,
+        //     y:2,
+        //     z:{
+        //         c:1,
+        //         v:2,
+        //     }
+        // };
+        // console.log({...a});//{x: 1, y: 2, z: {…}}
+
+
+        // 对象展开运算符的应用
+        // 1.复制对象
+        // const a = {
+        //     x: 1,
+        //     y: 2
+        // };
+        // const b ={...a};
+        // 2.用户参数和默认参数
+        // const logUser = ({uname = 'ZS',age = 0,sex = 'male'} = {}) =>{
+        //     console.log(uname,age,sex);
+        // };
+        // const logUser = userParm =>{
+        //     const defaultParam = {
+        //         uname = 'ZS',
+        //         age = 0,
+        //         sex = 'male'
+        //     }
+        // // const param = {...defaultParam,...userParm};
+        // // console.log(param.uname);
+
+        // const {uname,age,sex} = {...defaultParam,...userParm};
+        // console.log(uname,age,sex);
+        // };
+        
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

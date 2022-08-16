@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:  auto 40px;
+        }
+        button{
+            margin-top: 50px;
+        }
+        span{
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">开始</button>
+    <span id="result">0</span>
+    <script>
+        const btn = document.getElementById('btn'); 
+        const result = document.getElementById('result'); 
+
+
+
+        // // 方法1
+        // const timer = {
+        //     time:0,
+        //     start:function(){
+        //         var self = this;
+        //         btn.addEventListener(
+        //             'click',
+        //             function(){
+        //                 setInterval(function(){
+        //                     console.log(this);
+        //                     self.time++;
+        //                     result.innerHTML = self.time;
+
+        //                 },1000)
+        //             },false);
+
+        //     }
+
+        // };
+
+        // 方法2
+        const timer = {
+            time:0,
+            start:function(){
+                btn.addEventListener(
+                    'click',
+                    () =>{
+                        setInterval(() =>{
+                            console.log(this);
+                            this.time++;
+                            result.innerHTML = this.time;
+
+                        },1000)
+                    },false);
+
+            }
+
+        };
+
+        timer.start();
+
+    </script>
+</body>
+</html>

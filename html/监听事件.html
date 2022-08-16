@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+    </style> -->
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        #box2{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            margin-top: 25px;
+            margin-left: 25px;
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin-top: 25px;
+            margin-left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="box">
+
+    </div>
+    <script>
+        var oBox = document.getElementById('box');
+        oBox.onclick = function(){
+            console.log('我是onclick');
+        };
+        oBox.ondbclick = function(){
+            console.log('我是ondbclick');
+        };
+        oBox.onmousedown = function(){
+            console.log('我是onmousedown');
+        };
+        oBox.onmouseup = function(){
+            console.log('我是onmouseup');
+        };
+        oBox.onmouseenter = function(){
+            console.log('我是onmouseenter');
+        };
+        oBox.onmouseleave = function(){
+            console.log('我是onmouseleave');
+        };
+        
+        oBox.onmousemove = function(){
+            console.log('我是onmousemove');
+        };
+        
+
+    </script> -->
+    <!-- 姓名：<input type="text" id="nameField">
+    <script>
+        var nameField = document.getElementById('nameField');
+        nameField.onkeypress = function(){
+            console.log('我是onkeypress');
+        };
+        nameField.onkeydown = function(){
+            console.log('我是onkeydown');
+        };
+        nameField.onkeyup = function(){
+            console.log('我是onkeyup');
+        };
+    </script> -->
+
+<!-- 
+    <form id="myform">
+        <p>
+            姓名:
+            <input type="text" name="nameField" id="">
+            
+        </p>
+        <p>
+            年龄:
+            <input type="text" name="ageField" id="">
+        </p>
+        <p>
+            <input type="submit" name="" id="">
+        </p>
+        <p>
+            <input type="reset" name="" id="">
+        </p>
+    </form>
+
+    <script>
+        var myform = document.getElementById('myform');
+        var nameField = myform.nameField;
+        var ageField = myform.ageField;
+
+
+        nameField.onchange = function(){
+            console.log('你已经修改姓名');
+        };
+
+        nameField.oninput = function(){
+            console.log('你正在修改姓名');
+        };
+
+        nameField.onfocus = function(){
+            console.log('姓名得到焦点');
+        };
+
+        nameField.onblur = function(){
+            console.log('姓名失去焦点');
+        };
+        myform.onsubmit = function(){
+            alert('你正在尝试提交表单');
+        };
+        myform.onreset = function(){
+            alert('你正在尝试重置表单');
+        };
+    </script> -->
+
+
+    <div id="box1">
+        <div id="box2">
+            <div id="box3">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var obox1 = document.getElementById('box1');
+        var obox2 = document.getElementById('box2');
+        var obox3 = document.getElementById('box3');
+
+        // obox1.onclick = function(){
+        //     console.log('我是box1');
+        // };
+        // obox2.onclick = function(){
+        //     console.log('我是box2');
+        // };
+        // obox3.onclick = function(){
+        //     console.log('我是box3');
+        // };
+
+        obox1.addEventListener('click',function(){
+            console.log('box1捕获阶段');
+
+        },true);
+        obox2.addEventListener('click',function(){
+            console.log('box2捕获阶段');
+
+        },true);
+        obox3.addEventListener('click',function(){
+            console.log('box3捕获阶段');
+
+        },true);
+        obox1.addEventListener('click',function(){
+            console.log('box1冒泡阶段');
+
+        },false);
+        obox2.addEventListener('click',function(){
+            console.log('box2冒泡阶段');
+        },false);
+        obox3.addEventListener('click',function(){
+            console.log('box3冒泡阶段');
+        },false);
+
+    </script>
+</body>
+</html>

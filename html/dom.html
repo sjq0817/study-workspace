@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        // 页面加载完成再执行函数体内语句
+        window.onload = function(){
+            var box1 = document.getElementById('box1');
+            var box2= document.getElementById('box2');
+            console.log(box1);
+            console.log(box2);
+        };
+    </script> -->
+    <!-- <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+        }
+    </style> -->
+</head>
+<body>
+    <!-- <div id="box1">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <div id="box2">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+
+    <script>
+        // 得到box1
+         var box1 = document.getElementById('box1');
+        //  得到box1中的p标签
+        var ps_inbox1 = box1.getElementsByTagName('p');
+    </script> -->
+    <!-- <script>
+        var box1 = document.getElementById('box1');
+        var box2= document.getElementById('box2');
+        console.log(box1);
+        console.log(box2);
+
+    </script> -->
+
+
+    <!-- <div class="box1">1</div>
+    <div class="box1">1</div>
+    <script>
+        var box1 = document.getElementsByClassName('box1');
+        console.log(box1);
+    </script> -->
+
+
+    <!-- <div id="box1">
+        <p>duanluo</p>
+        <p class="spec para">duanluo</p>
+        <p>duanluo</p>
+    </div>
+    <script>
+        var thr_p = document.querySelector('#box1 .spec');
+        var thr_p = document.querySelector('#box1 p:nth-child(2)');
+
+    </script> -->
+
+   <!-- <ul id="list1">
+       <li>我是li</li>
+       <li>我是li</li>
+       <li>我是li</li>
+       <li>我是li</li>
+   </ul>
+   <ul id="list2">
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <script>
+        var li_inlist1 = document.querySelectorAll('#list1 li');
+        console.log(li_inlist1);
+    </script> -->
+
+    <!-- <div id="box">
+        <p>我是段落</p>
+        <p id="para">我是段落</p>
+        <p>我是段落</p>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        var para = document.getElementById('para');
+        // 得到所有子节点
+        console.log(box.childNodes);
+        // 元素节点，IE9
+        console.log(box.children);
+        // 第一个子节点
+        console.log(box.firstChild);
+        console.log(box.firstChild.nodeType)
+        // 第一个子节点，IE9
+        console.log(box.firstElementChild)
+    
+        // 最后一个子节点
+        console.log(box.lastChild);
+        console.log(box.lastChild.nodeType)
+        // 最后一个子节点，IE9
+        console.log(box.lastElementChild)
+        // 父节点
+        console.log(para.parentNode);
+        // 前一个兄弟节点
+        console.log(para.previousSibling);
+        // 前一个兄弟节点，IE9
+        console.log(para.previousElementSibling);
+        // 后一个兄弟节点
+        console.log(para.nextSibling);
+        // 后一个兄弟节点，IE9兼容
+        console.log(para.nextElementSibling);
+    </script> -->
+
+    <!-- <div id="box">
+        <p>我是段落</p>
+        <p id="para">我是段落</p>
+        <p>我是段落</p>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        var para = document.getElementById('para');
+
+        // 封装函数，这个函数可以返回元素的所有子元素节点兼容到IE6，类似children的功能
+        function getChildren(node){
+            // 结果数组
+            var children = [];
+            // 遍历node这个节点的所有子节点，判断一个子节点的nodeType属性值是不是1
+            // 如果是1，就推入结果数组中
+            for(var i = 0;i < node.childNodes.length;i++){
+                if(node.childNodes[i].nodeType == 1){
+                    children.push(node.childNodes[i]);
+                }
+            }
+            return children;
+
+        }
+        console.log(getChildren(box));
+        console.log(getChildren(para));
+
+
+        // 封装一个函数，这个函数可以返回元素的前一个元素兄弟节点（兼容到IE6），类似previousElementSibling的功能
+        function getElementPreviousSibling(node){
+            var o = node;
+            while(o.previousSibling != null){
+                if (o.previousSibling.nodeType == 1){
+                    // 结束循环，找到了
+                    return o.previousSibling;
+                }
+                // 让o成为前一个节点
+                o = o.previousSibling;
+            }
+            return null;
+
+        }
+        console.log(getElementPreviousSibling(para));
+
+
+        // 封装一个函数，这个函数可以返回元素的所有元素兄弟节点
+        function getElementSibling(node){
+            // 前面的元素兄弟节点
+            var pres = [];
+            // 后面的元素兄弟节点
+            var nexs = [];
+            var o = node;
+            while(o.previousSibling != null){
+                if(o.previousSibling.nodeType == 1){
+                    pres.unshift(o.previousSibling);
+                }
+                o = o.previousSibling;
+            }
+            o = node;
+            while(o.nextSibling != null){
+                if(o.nextSibling.nodeType == 1){
+                    nexs.push(o.nextSibling);
+                }
+                o = o.nextSibling;
+            }
+            return pres.concat(nexs);
+
+
+        }
+        console.log(getElementPreviousSibling(para));
+
+    </script> -->
+
+
+    <!-- <div id="box"></div>
+    <script>
+        var oBox = document.getElementById('box');
+        oBox.innerHTML = '<ul><li>牛奶</li></ul>';
+        oBox.innerText = '<ul><li>牛奶</li></ul>';
+
+    </script> -->
+
+<!-- 
+    <div class="box" id="box"></div>
+    <script>
+        var oBox = document.getElementById('box');
+        oBox.style.backgroundColor = 'black';
+        oBox.style.backgroundImage = 'url(https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF)';
+
+    </script> -->
+
+<!-- 
+    <img src="../sundry/后羿.jpg" alt="" id="pic">
+    <a href="http://www.baidu.com" id="link"> 去百度</a>
+    <script>
+        var oPic = document.getElementById('pic');
+        oPic.src = '../sundry/裴擒虎.jpg';
+        var oLink = document.getElementById('link');
+        oLink.href = 'http://www.imooc.com';
+        oLink.innerText = '去慕课网';
+
+    </script> -->
+
+    <!-- <div id="box"></div>
+    <script>
+        var box = document.getElementById('box');
+        box.setAttribute('data-n',10);
+        var n = box.getAttribute('data-n');
+        alert(n);
+    </script> -->
+
+
+    <!-- <div id="box">
+        <p>我是段落0</p>
+        <p>我是段落1</p>
+        <p>我是段落2</p>
+    </div>
+
+    <script>
+        var oBox = document.getElementById('box');
+        var oPs = document.getElementsByTagName('p');
+        // 创建孤儿节点
+        var oP = document.createElement('p');
+        // 修改文本
+        oP.innerText = '我是新来的';
+        // 上树
+        // oBox.appendChild(oP);
+        oBox.insertBefore(oP,oPs[1]);
+    </script> -->
+
+    <!-- <div id="box1">
+        <p>标杆</p>
+        <p id="para">段落1</p>
+    </div>
+    <div id="box2">
+        <p id="para2">段落2</p>
+    </div>
+    <script>
+        var oBox1 = document.getElementById('box1');
+        var oBox2 = document.getElementById('box2');
+        var oPrar = document.getElementById('para');
+        var oPara = document.getElementById('para2');
+        var oBiaogan = document.getElementsByTagName('p');
+
+
+        oBox2.appendChild(oPrar);
+        oBox1.insertBefore(oPara,oBiaogan[0]);
+        console.log(oBox1);
+        console.log(oBox2);
+
+    </script> -->
+
+    <!-- <div id="box">
+        <p>我是节点0 </p>   
+        <p>我是节点1 </p>   
+        <p>我是节点2 </p>   
+    </div>
+    <script>
+        var oBox = document.getElementById('box');
+        var first_p = oBox.getElementsByTagName('p')[0];
+        oBox.removeChild(first_p);
+
+    </script> -->
+
+    <!-- <div id="box1">
+        <ul>
+            <li>牛奶</li>
+            <li>咖啡</li>
+            <li>可乐</li>
+        </ul>
+    </div>
+    <div id="box2">
+
+    </div>
+    <script>
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var the_ul = box1.getElementsByTagName('ul')[0];
+        var new_ul = the_ul.cloneNode(true);
+        box2.appendChild(new_ul);
+        
+    </script> -->
+</body>
+</html>

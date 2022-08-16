@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .warning{
+            color: red;
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            请输入中文姓名：
+            <input type="text" id="nameField">
+            <span class="warning" id="nameWarning">输入的姓名不合法</span>
+        </p>
+        <p>
+            请输入手机号码：
+            <input type="text" id="phoneNumber">
+            <span class="warning" id="phoneWarning">输入的电话号码不合法</span>
+        </p>
+        <p>
+            请输入邮箱地址：
+            <input type="text" id="emailField">
+            <span class="warning" id="emailWarning">输入的邮箱地址不合法</span>
+        </p>
+
+    </div>
+
+    <script>
+        var nameField = document.getElementById('nameField');
+        var nameWarning = document.getElementById('nameWarning');
+        var phoneNumber = document.getElementById('phoneNumber');
+        var phoneWarning = document.getElementById('phoneWarning');
+        var emailField = document.getElementById('emailField');
+        var emailWarning = document.getElementById('emailWarning');
+        
+        
+        
+    
+        
+        nameField.onblur = function(){
+            // 得到姓名
+             var name = nameField.value;
+             // 检查姓名是否合法的正则表达式
+             var checkName = /^[\u4E00-\u9FA5]{2,4}$/;
+            if(checkName.test(name)){
+                // 如果通过检验
+                nameWarning.style.display = 'none';
+            }else{
+                // 如果没有通过检验
+                nameWarning.style.display = 'inline';
+
+            }
+
+        };
+        phoneNumber.onblur = function(){
+            // 得到电话号码
+            var tel = phoneNumber.value;
+            // 检查电话号码是否合法的正则表达式
+            var checkTel = /^1\d{10}$/;
+            if(checkTel.test(tel)){
+                // 如果通过检验
+                phoneWarning.style.display = 'none';
+            }else{
+                // 如果没有通过检验
+                phoneWarning.style.display = 'inline';
+
+            }
+
+        };
+
+        emailField.onblur = function(){
+            // 得到email
+             var email = emailField.value;
+             // 检查email是否合法的正则表达式
+            //  合法的email  abcd_123cd@qq.com
+             var checkEmail = /^\w{2,}\@\w{2,}\.[a-z]{2,4}(\.[a-z]{2,4})?$/;
+            if(checkEmail.test(email)){
+                // 如果通过检验
+                emailWarning.style.display = 'none';
+            }else{
+                // 如果没有通过检验
+                emailWarning.style.display = 'inline';
+
+            }
+
+        };
+
+
+    </script>
+</body>
+</html>

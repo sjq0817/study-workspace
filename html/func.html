@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fun(){
+        //     console.log(arguments);
+        // }
+        // fun(11,22,33,44);
+        // function sunFun(){
+        //     var sun = 0;
+        //     for(var i=0;i < arguments.length;i++){
+        //         sun += arguments[i];
+        //     }
+        //     console.log(sun);
+
+        // }
+        // sunFun(11,22,33,44);
+
+        // // 书写一个函数,函数的功能是判断一个数字是否是偶数
+        // function checkEven(n){
+        //     if(n % 2 == 0)  return true;
+        //     return false;
+        // }
+        // var res = checkEven(6);
+        // console.log(res);
+
+
+        // // 喇叭花数是这样的三位数:其每一位数字的阶乘之和恰好等于它本身.
+        // // 即abc = a! + b! + c!
+        // // 其中abc表示一个三位数.试寻找所有喇叭花数
+        //  function factorial(n){
+        //      var result = 1;
+        //      for(var i = 1;i <= n;i++){
+        //          result *= i;
+        //      }
+        //      return result;
+        //  }
+        //  for(var i = 100;i <= 999;i++){
+        //      var i_str = i.toString();
+        //      var a = Number(i_str[0]);
+        //      var b = Number(i_str[1]);
+        //      var c = Number(i_str[2]);
+
+        //     //  判断是否阶乘和等于本身
+        //     if(i == factorial(a) + factorial(b) + factorial(c)){
+        //         console.log(i);
+        //     } 
+
+        //  }
+
+        // var arr = [33,22,55,11];
+        // arr.sort(function(a,b){
+        //     if(a > b){
+        //         return 1;
+        //     }else{
+        //         return -1;
+        //     }
+        // });
+        // console.log(arr);
+
+        // var arr = [33,22,55,11];
+        // arr.sort(function(a,b){
+        //    return a-b;
+        // });
+        // console.log(arr);
+
+
+        // function factorial(n){
+        //     if (n == 1) return 1;
+        //     return n * factorial(n-1);
+        // }
+        // var result = factorial(6);
+        // alert(result);
+
+
+        // // 斐波那契数列
+
+        // function fib(n){
+        //     if(n==0 || n==1) return 1;
+        //     return fib(n-1) + fib(n-2);
+        // }
+        // console.log(fib(6));
+
+
+        // // 准备原数组
+        // var arr1 = [33,44,55,66,[77,88]];
+        // // 准备一个结果数组
+        // var result = [];
+        // // 遍历原数组,将遍历到的项都推入到结果数组中
+        // for(var i = 0;i < arr1.length;i++){
+        //     result.push(arr1[i]);
+        // }
+        // // 输出结果数组
+        // console.log(result);
+        // // 测试是否实现了克隆,就是说本质上是内存中不同数组了
+        // console.log(arr1 == result);
+        // // 测试这样的克隆是浅克隆,"藕断丝连"
+        // arr1[4].push(99);
+
+        // // 准备原数组
+        // var arr1 = [33,44,55,66,[77,88,[99,11]]];
+        // // 函数,这个函数会被递归
+        // function deepClone(arr){
+        //     // 结果数组
+        //     var result = [];
+        //     // 遍历数组的每一项
+        //     for(var i = 0;i < arr.length;i++){
+        //         // 类型判断,如果遍历到的项是数组
+        //         if(Array.isArray(arr[i])){
+        //             // 递归
+        //             result.push(deepClone(arr[i]));
+        //         }else{
+        //             // 如果遍历到的项不是数组,是基本类型值,就直接推入到结果数组中
+        //             // 相当于是递归出口
+        //             result.push(arr[i]);
+        //         }
+        //     }
+        //     return result;
+        // }
+        // var arr2 = deepClone(arr1);
+        // console.log(arr2);
+
+        // var a = 10;
+        // function fun(){
+        //     var a = 5;
+        //     a++;
+        //     console.log(a);//6
+        // }
+        // fun();
+        // console.log(a);//10
+
+        // var a = 10;
+        // function fun(){
+        //     a++;
+        //     var a = 5;
+        //     console.log(a);//6,变量声明提升
+        // }
+        // fun();
+        // console.log(a);//10
+
+        // var a = 10;
+        // function fun(a){
+        //     a++;
+        //     console.log(a);//6,形参也是局部变量
+        // }
+        // fun(5);
+        // console.log(a);//10
+
+        // function fun(){
+        //     function inner(){
+        //         console.log('你好')
+        //     }
+        //     inner();
+        // }
+        // fun();
+
+            // var a = 10;
+            // var b = 20;
+            // function fun(){
+            //     var c = 30;
+            //     function inner(){
+            //         var d = 40;
+            //         var a = 50;
+            //         console.log(a,b,c,d);
+            //     }
+            //     inner();
+            // }
+            // fun();
+
+
+            // function fun(){
+            //     var name = '慕课网';
+            //     return function (){
+            //         alert(name);
+            //     };
+            // }
+            // var inn = fun();
+            // inn();
+
+            // function createCheckTemp(standardTemp){
+            //     function checkTemp(n){
+            //         if (n <= standardTemp){
+            //             alert('体温正常');
+            //         }else{
+            //             alert('体温偏高');
+            //         }
+            //     }
+            //     return checkTemp;
+            // }
+            // var checkTemp_A = createCheckTemp(37.1);
+            // checkTemp_A();
+            // var checkTemp_B = createCheckTemp(37.3);
+            // checkTemp_B();
+
+
+            // function fun(){
+            //     var a = 0;
+            //     return {
+            //         getA: function(){
+            //             return a;
+            //         },
+            //         add: function(){
+            //             a++;
+            //         },
+            //         pow: function(){
+            //             a *= 2;
+            //         }
+            //     };
+            // }
+            // var obj = fun();
+            // console.log(obj.getA());
+            // obj.add();
+
+
+
+            // var age = 12;
+            // var sex = '男';
+            // var title = (function (){
+            //     if(age < 18){
+            //         return '小朋友';
+            //     }else{
+            //         if(sex == '男'){
+            //             return '先生';
+            //         }else{
+            //             return '女士';
+            //         }
+            //     }
+            // })();
+            // alert(title);
+
+
+            // var arr = [];
+            // for (var i = 0;i < 5;i++){
+            //     (function(i){
+            //         arr.push(function(){
+            //         alert(i);
+            //         });
+            //     })(i); 
+            // }
+            // arr[1]();
+            // arr[2]();
+            // arr[3]();
+
+
+    </script>
+</body>
+</html> 

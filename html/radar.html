@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 导入echarts -->
+	<script src="../js/echarts.min.js"></script>
+	<title>radar</title>
+	<style>
+		#radar {
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="radar"></div>
+	<script>
+		var radar = document.getElementById("radar")
+		var myRadar = echarts.init(radar)
+
+		var option = {
+			title: {
+				text: '雷达图练习1'
+			},
+			radar: [
+				{
+					// id:'',   组件 ID。默认不指定。指定则可用于在 option 或者 API 中引用组件。
+					// zlevel: 2,  层级 控制图表出现的先后顺序
+					// z:2,  组件的所有图形的z值。控制图形的前后顺序。z值小的图形会被z值大的图形覆盖。  z相比zlevel优先级更低，而且不会创建新的 Canvas。
+					center: ["50%", "50%"],  // 位置 百分比  或 某一数值  [300, 400]   [x, y]
+					radius: 150,  // 缩放比例   单一参数指定外半径   [number|string,number|string]    数组的第一项是内半径，第二项是外半径
+					// startAngle: 90,  //  默认 90   数学上的90度角  显示器上北下南   第一项【语文】指向 正北     
+					startAngle: 0,  // 第一项【语文】为 0 度 指向正南方  显示器的右手边
+
+					//  name 属性  官网给的文档 只有 show 和 formatter 两个属性而已 其实里面可以传入其他属性的 比如 textStyle
+					name: {
+						show: true,  // 默认true  设置为false  indicator[i].text 就没有用处了
+
+						//  对 indicator[i].text  进一步修饰
+						formatter: function (value, indicator) {
+							console.log(value, indicator)
+
+							//  可以在这里做一些有趣的  codeing
+							if (indicator.text == '语文') {
+								indicator.axisLine.lineStyle.color = "green"
+								indicator.axisLine.lineStyle.width = 5
+							}
+							return '【' + value + '】';
+						},
+
+						textStyle: {  // 字体的设置
+							// 修改全局 item 的颜色
+							color: "blue",
+							fontSize: 18
+						}
+					},
+					nameGap: 3,   //  定点 和  indicator[i].text 的距离
+					splitNumber: 5,  //  雷达图分为几层
+					shape: 'polygon',  // 雷达图绘制类型  默认 polygon  多边形根据 indicator.length  可选  circle
+					// scale: false,  // 默认 false  是否是脱离 0 值比例。设置成 true 后坐标刻度不会强制包含零刻度。在双数值轴的散点图中比较有用。
+					// silent:  true, // 坐标轴是否是静态无法交互。
+          // triggerEvent: false,// 坐标轴的标签是否响应和触发鼠标事件，默认不响应。 
+          // 雷达图的指示器，用来指定雷达图中的多个变量（维度）
+          // name max min color
+					indicator: [
+						// 直接在这里修改  item 文字 也是可以的  优先级大于  name.textStyle.color   
+						// 注意文档没有提到  name.textStyle.color   
+						{ text: "语文", color: "#f00", max: 150 },
+						{ text: "数学", max: 150 },
+						{ text: "英语", max: 150 },
+						{ text: "物理", max: 120 },
+						{ text: "化学", max: 108 },
+						{ text: "生物", max: 72 }
+					],
+          // TODO: 坐标轴轴线相关设置。
+          // axisLine: {},
+          // TODO: 坐标轴刻度相关设置。
+          // axisTick: {},
+          // TODO: 坐标轴刻度标签的相关设置。
+          // axisLabel: {}
+          
+          // 坐标轴在 grid 区域中的分隔区域，默认不显示
+					splitArea: {
+						show: false
+          },
+          // TODO: 坐标轴在 grid 区域中的分隔线。
+					splitLine: {
+						lineStyle: {  // 雷达图每层线圈的样式
+							type: 'dashed',
+							color: '#f0f'
+						}
+					},
+				}
+			],
+			series: [
+				{
+					name: "",
+					type: "radar",
+					radarIndex: 0,
+					data: [
+						{
+							value: [123, 143, 104, 97, 100, 68],
+							name: "雷达图",
+							lineStyle: {  // 雷达图边线
+								color: "#e33e33"
+							},
+							symbol: "none",
+							// itemStyle: {
+							//     color: "#ff0000"
+							// },
+							areaStyle: {
+								opacity: 1,
+								// 渐变色
+								color: new echarts.graphic.RadialGradient(0.5, 0.5, 1, [
+									{
+										color: "#e33e3301",
+										offset: 0
+									},
+									{
+										color: "#72ACD1",
+										offset: 1
+									}
+								])
+							}
+						}
+					]
+				}
+			]
+		};
+		myRadar.setOption(option)
+	</script>
+</body>
+
+</html>

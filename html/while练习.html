@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 输出1~100
+        // var i = 1;
+        // while (i <= 100) {
+
+        //     console.log(i);
+        //     i++;
+
+        // }
+        
+
+        // // 累加1~100
+        // var i = 1;
+        // var sum = 0;
+        // while (i <= 100) {
+
+        //     sum += i;
+        //     i++;
+        // }
+        // console.log(sum);
+
+        // // 寻找最小的满足n^2>456789的整数n
+        // var n = 1;
+        // while (n * n <= 456789) {
+        //     n++;
+
+        // }
+        // console.log(n);
+        
+
+        // // 小兔子拔萝卜,第一天拔1个,第二天拔2个,第三天拔3个,以此类推.请问小兔子多少天能把500个萝卜拔光?
+        // var lb = 0;
+        // var sum = 0;
+        // while (sum <= 500) {
+        //     lb++;
+        //     sum += lb;
+        // }
+        // console.log(lb);
+
+
+        // 随机生成一个2到99的数字,让用户猜测这个数字是几,
+        // 用户输入自己的猜测之后,提示"输入的数字太大了"或"输入的数字太小了",
+        // 不断重复这个过程,直到用户准确猜到这个数字
+        // 自己写的
+        // var ran1 = parseInt(Math.random() * 98) + 2;
+        // console.log(ran1);
+        // var num1 = Number(prompt('猜猜我是几'));
+        // while (true) {
+        //     if (ran1 != num1) {
+        //         if (num1 > ran1) {
+        //             num1 = Number(prompt('输入的数字太大了'));
+        //         } else {
+        //             num1 = Number(prompt('输入的数字太小了'));
+        //         }
+        //     }else {
+        //         alert('猜对了！！！')
+        //         break;
+        //     }
+            
+        // }
+
+        // // 模板while
+        // var n = parseInt(Math.random() * 98) + 2;
+        // console.log(n);
+        // var min = 1;
+        // var max = 100;
+        // while (true) {
+        //     var n1 = Number(prompt(min + '~猜猜我是几~' + max));
+
+        //     if (n1 <= min || n1 >= max) {
+        //         alert('你输入的数字不再范围内');
+        //         continue;
+        //     }
+
+        //     if (n1 > n) {
+        //         alert('输入的数字太大了');
+        //         max = n1;
+        //     } else if (n1 < n) {
+        //         alert('输入数字太小了');
+        //         min = n1;
+        //     } else {
+        //         alert('猜对了！！！');
+        //         break;
+        //     }
+        // }
+
+        // // do-while
+        // var n = parseInt(Math.random() * 98) + 2;
+        // console.log(n);
+        // var min = 1;
+        // var max = 100;
+        // do {
+        //     var n1 = Number(prompt(min + '~猜猜我是几~' + max));
+
+        //     if (n1 <= min || n1 >= max) {
+        //         alert('你输入的数字不再范围内');
+        //         continue;
+        //     }
+
+        //     if (n1 > n) {
+        //         alert('输入的数字太大了');
+        //         max = n1;
+        //     } else if (n1 < n) {
+        //         alert('输入数字太小了');
+        //         min = n1;
+        //     } 
+        // } while (n != n1)
+        
+        // alert('猜对了！！！');
+               
+
+
+
+
+
+        // 随机生成两个变量dx和dy,它们均在[-4,4]区间随机取值,但要求dx和dy不能同时为0
+       
+        // do {
+
+        //     var dx = Math.random() * 9 - 4;
+        //     var dy = Math.random() * 9 - 4;
+
+        // } while (dx == 0 && dy == 0)
+        // console.log(dx,dy);
+    </script>
+</body>
+</html>

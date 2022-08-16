@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>   
+    // 1.认识for...of循环
+    // const arr = [1,2,3,5];
+    // const it = arr[Symbol.iterator]();
+    // let next = it.next();
+    // while(!next.done){
+    //     console.log(next.value);
+    //     next = it.next();
+        
+    // }
+    
+
+    // const arr = [1,2,3,5];
+    // for (const item of arr){
+    //     console.log(item);
+
+    // }
+    
+
+    // for...of循环只会遍历出哪些done为false时，对应的value值
+
+    // for...of循环的应用
+    // 和break；continue结合使用
+    // const arr = [1,2,3,4];
+    // for (const item of arr){
+    //     if(item === 2){
+    //         // break;
+    //         continue;
+    //     }
+    //     console.log(item);
+    // }
+
+
+    // 3.for...of循环中取得数组的索引值
+    // const arr = [1,2,3,4];
+    // // keys()得到的是索引的可遍历对象，可以遍历出索引值
+    // console.log(arr.keys());
+    // for (const index of arr.keys()){
+    //     console.log(index);
+    // }
+
+    // //values()得到的是值的可遍历对象，可以遍历出值
+    // for (const value of arr.values()){
+    //     console.log(value);
+    // }
+
+
+    // entries()得到的是索引+值组成的数组的可遍历对象
+    // for (const index_values_arr of arr.entries()){
+    //     console.log(index_values_arr);
+    // }
+
+    // for (const [index,value] of arr.entries()){
+    //     console.log(index,value);
+    // }
+
+
+
+
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 5000px;
+            background-image: linear-gradient(to bottom,blue,green,yellow);
+        }
+        .backtotop{
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            /* 小手状 */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="backtotop" id="backtotopbtn">返回顶部</div>
+    <script>
+        var backtotopBtn = document.getElementById('backtotopbtn');
+        var timer;
+        backtotopBtn.onclick = function(){
+            // 设表先关
+            clearInterval(timer);
+            
+            // 设置定时器
+
+            timer = setInterval(function(){
+                document.documentElement.scrollTop -= 200;
+                if(document.documentElement.scrollTop <= 0){
+                    clearInterval(timer);
+                }
+            },20);
+        };
+    </script>
+</body>
+</html>

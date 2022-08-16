@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>能力统计</title>
+</head>
+<body>
+<div id="chart1" style="width:600px; height: 800px;"></div>
+<script src="../js/echarts.min.js"></script>
+<script type="text/javascript">
+   
+    //指定图标的配置和数据
+    var option = {
+        title: {
+            text: '雷达图'
+        },
+        tooltip: {
+        
+          confine:'true',//限制在显示框里
+           
+          
+        },
+        legend: {
+            data: ['能力值']
+        },
+        radar: {
+            name: {
+                textStyle: {
+                    color: 'black',
+                    backgroundColor:'yellow',
+                    borderRadius: 3,
+                    padding: [3, 5]
+                }
+            },
+            indicator: [
+                {name: '文化', max: 100},
+                {name: '生活', max: 100},
+                {name: '娱乐', max: 100},
+                {name: '流行', max: 100},
+                {name: '科学', max: 100}
+            ]
+        },
+        series: [{
+            name: '能力',
+            type: 'radar',
+            areaStyle: {normal: {}},
+            data: [
+                {name: "能力值", value: [80, 90, 94, 80, 100]}
+            ]
+        }]
+    };
+    //初始化echarts实例
+    var myChart = echarts.init(document.getElementById('chart1'));
+
+    //使用制定的配置项和数据显示图表
+    myChart.setOption(option);
+</script>
+
+</body>
+</html>

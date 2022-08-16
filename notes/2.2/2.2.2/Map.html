@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.认识Map
+        // 映射
+        // Map和对象都是键值对的集合
+        // const m = new Map();
+        // m.set('name','alex');
+        // console.log(m);
+
+
+        // 2.Map和对象的区别
+        // 对象的键名是字符串
+
+        // const m = new Map();
+        // m.set('name','alex');
+        // m.set(true,'alex');
+        // m.set({},'alex');
+        // m.set(undefined,'alex');
+        // m.set(null,'alex');
+        // Map的键
+        // 基本数据类型:数字\字符串\布尔值\undefined\null
+        // 引用数据类型:对象([]\{}\函数\Set\Map)
+
+
+        // Map实例的方法和属性
+        // 1.方法
+        // 添加成员,set
+        // 使用set添加的新成员,键如果已经存在,后添加的键值覆盖已有的
+        // const m = new Map();
+        // m.set('age',18).set(true,'true').set('age',20);
+        // console.log(m);
+
+        // 获取指定成员,get
+        // get获取不存在的成员,返回undefined
+        // console.log(m.get(true));
+
+
+        // 判断有没有指定的键,has
+        // console.log(m.has(true));
+
+        // 删除键值.delete
+        //使用delete删除不存在的成员,什么都不会发生,也不会报错
+        // m.delete(true);
+        // console.log(m);
+
+        // 清除Map成员,clear
+        // m.clear();
+
+        // forEach
+        // m.forEach(function(value,key,map){
+        //     // map === m
+        //     console.log(this);
+        // },document);
+
+        // 2.属性
+        // 获取有几个成员,size
+        // console.log(m.size);
+
+
+
+        // Map构造函数的参数
+        // 1.数组
+        // 只能传二维数组,而且必须体现出键和值
+        // new Map([
+        //     ['name','alex'],
+        //     ['age',18]
+        // ]);
+
+        // 2.Set Map
+        // Set
+        // const s = new Set([
+        //     ['name','alex'],
+        //     ['age',18]
+        // ]);
+        // const m = new Map(s);
+        // console.log(m);
+
+        // Map
+        // const m1 = new Map([
+        //     ['name','alex'],
+        //     ['age',18]
+        // ]);
+        // const m2 = new Map(m1);
+        // console.log(m2);
+
+
+
+        // Map的注意事项
+        // 1.判断键名是否相同的方式
+        // 基本遵循严格相等(===)
+        // 除了NaN,Map中NaN也是等于NaN
+
+        // 2.什么时候使用Map
+        // 如果只需要key → value的结构,或者需要字符串以外的值做键
+        // 使用Map更合适
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

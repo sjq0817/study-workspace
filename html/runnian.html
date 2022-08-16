@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 要让用户先输入一个年份
+        var year=Number(prompt('请输入年份'));
+        // 根据两个条件，判断(满足这两个条件中的一个就是闰年);
+        // ①能被4整除且不能被100整除
+        // ②能被100整除且能被400整除
+
+        alert(year % 4 == 0 && year % 100 != 0 || year % 100 == 0 && year % 400 ==0);
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 例子1
+        // var obj1 = {
+        //     a:1,
+        //     b:2,
+        //     c:3
+        // };
+        // var obj2 = {
+        //     a:1,
+        //     b:2,
+        //     c:3  
+        // };
+
+        // console.log(obj1 == obj2);
+        // console.log(obj1 === obj2);
+
+
+        // // 例子2
+        // var obj3 = {
+        //     a:1,
+        //     b:2,
+        //     c:3
+        // };
+        // var obj4 = obj3;
+        // obj3.a++;
+        // console.log(obj4.a);
+
+        // var obj1 = {
+        //     a:1,
+        //     b:2,
+        //     c:[44,55,66]
+        // };
+        // // 实现浅克隆？obj1和obj2属性c本质上是同一个引用值没有被克隆分开
+        // var obj2 ={};
+        // for (var k in obj1){
+        //     // 每遍历一个obj1的k属性，就给obj2也添加同名的属性k
+        //     // 值和obj1的k属性值相同
+        //     obj2[k] = obj1[k];
+        // }
+
+        // obj1.a++;
+        // obj1.c.push(77);
+        // console.log(obj2);
+
+
+        // // 深克隆
+        // var obj1 = {
+        //     a:1,
+        //     b:2,
+        //     c:[33,44,{
+        //         m:55,
+        //         n:66,
+        //         p:[77,88]
+        //     }]
+        // };
+
+        // function deepClone(o){
+        //     if(Array.isArray(o)){
+        //         // 数组
+        //         var result = [];
+        //         for(var i = 0;i < o.length;i++){
+        //             result.push(deepClone(o[i]));
+        //         }
+        //     }else if (typeof o == 'object'){
+        //         // 对象
+        //         var result = [];
+        //         for(var k in o){
+        //             result[k] = deepClone(o[k]);
+        //         }
+                
+        //     }else{
+        //         // 基本类型值
+        //         var result = o;
+        //     }
+        //     return result;
+        // }
+
+        // var obj2 = deepClone(obj1);
+        // console.log(obj2);
+
+        // console.log(obj1.c == obj2.c);
+
+        // obj1.c[2].p.push(99);
+        // console.log(obj1);
+        // console.log(obj2);
+
+
+
+        // // 规则3
+        // var arr = ['A','B','C',function(){
+        //     console.log(this[1]);
+        // }];
+        // arr[3]();
+
+
+
+        // function fun(){
+        //     arguments[3]();
+        // }
+        // fun('A','B','C',function(){
+        //     console.log(this[1]);
+        // });
+
+
+        // // 规则4
+        // var a = 1;
+        // var obj = {
+        //     a:2,
+        //     fun:(function (){
+        //         var a = this.a;
+        //         return function(){
+        //             console.log(a + this.a);
+        //         }
+        //     })()
+        // };
+        // obj.fun();//3
+
+
+        // // 规则5
+        // var obj = {
+        //     a:1,
+        //     b:2,
+        //     fun:function(){
+        //         console.log(this.a + this,b);
+        //     }
+        // }
+        // var a = 3;
+        // var b = 4;
+        // // setInterval(obj.fun,2000);//7
+        // setInterval(function(){
+        //     obj.fun();
+        // },2000);//3
+
+        // function Fun(){
+        //     this.a = 3;
+        //     this.b = 4;
+        //     var m = 34;
+        //     if(this.a > this.b){
+        //         this.c = m;
+        //     }else{
+        //         this.c = m + 2;
+        //     }
+        // }
+        // var obj =new Fun();
+        // console.log(obj);
+        
+
+        // function People(name,age,sex){
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+        //     this.sayHello = function(){
+        //         console.log('我是'+ this.name+'，我'+ this.age+'岁了')
+        //     };
+        // }
+        // var xiaoming = new People('小明',12,'男');
+        // var xiaohong = new People('小红',12,'女');
+        // var xiaogang = new People('小刚',10,'男');
+        // xiaoming.sayHello();
+        // xiaohong.sayHello();
+        // xiaogang.sayHello();
+
+        // function People(age){
+        //     this.age = age;
+        // }
+        // // 往原型上添加nationality属性
+        // People.prototype.nationality = 'China';
+        // var xioaming = new People(12);
+        // var tom = new People(11);
+        // tom.nationality = 'America';
+        // console.log(xioaming.nationality);
+        // console.log(xioaming);
+        // console.log(tom.nationality);
+        
+
+
+        // function People(name,age,sex){
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+            
+        // }
+        // People.prototype.sayHello = function(){
+        //         console.log('我是'+ this.name+'，我'+ this.age+'岁了')
+        //     };
+        // People.prototype.sleep = function(){
+        //     console.log(this.name+'睡觉了zzzzz')
+        // };
+
+
+        // var xiaoming = new People('小明',12,'男');
+        // xiaoming.sayHello();
+        // xiaoming.sleep();
+
+
+        // function People(name){
+        //     this.name = name;
+        // }
+        // People.prototype.sayHello = function(){
+        //     console.log('你好我是' + this.name);
+        // };
+        // function Student(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // // 把父类和子类联系起来
+        // Student.prototype = new People();
+
+
+        // Student.prototype.sleep = function(){
+        //     console.log( this.name + 'zzzzz');
+        // };
+        // // 重写父类的方法
+        // Student.prototype.sayHello = function(){
+        //     console.log('老师好，我是' + this.name);
+        // }
+        // var xiaoming = new Student('xioaming',12);
+        // xiaoming.sayHello();
+        // xiaoming.sleep();
+        // var laozhang = new People('laozhang');
+        // laozhang.sayHello();
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 判断奇数偶数
+        // var num1 = Number(prompt('请输入一个数字'));
+        // if (num1 % 4 == 0){
+        //     alert(num1 + '是偶数');
+        // } else {
+        //     alert(num1 + '是奇数');
+        // }
+
+
+
+        // 判断是否可以申领驾照
+        // var age = Number(prompt('请输入年龄'));
+        // if (age >= 18 && age <= 70) {
+        //     alert('您可以申领驾照');
+        // } else {
+        //     alert('您的年龄不符合申领驾照');
+        // }
+
+
+        // 根据用户成绩输出档次
+        // var grade = Number(prompt('请您输入成绩'));
+        // if (grade >= 85 && grade <=100) {
+        //     alert('优秀');
+        // }else if (grade >= 70 && grade <= 84) {
+        //     alert('良好');
+        // }else if (grade >= 60 && grade <= 69) {
+        //     alert('及格');
+        // }else if (grade >= 0 && grade <= 59) {
+        //     alert('不及格');
+        // }else {
+        //     alert('请输入正确成绩');
+        // }
+
+
+
+
+        // BMI
+        // 用户输入身高
+        // var height = Number(prompt('请输入您的身高，单位为米'));
+
+        // // 用户输入体重
+        // var weight = Number(prompt('请输入您的体重，单位为公斤'));
+
+        // // 计算BMI身体指数
+        // var bmi = weight / Math.pow(height,2);
+
+        // // 弹出BMI指数
+        // alert('您的BMI指数是' + bmi);
+
+        // // 判断分档
+        // if (bmi < 18.5) {
+        //     alert('偏瘦');
+        // } else if (bmi < 24) {
+        //     alert('正常');
+        // } else if (bmi < 28) {
+        //     alert('过胖');
+        // } else if (bmi < 32) {
+        //     alert('肥胖');
+        // } else {
+        //     alert('非常肥胖');
+        // }
+
+
+
+
+        // if语句算法题
+        // 判断水仙花数
+        // 水仙花数是这样的一个三位数：它的每位数位的数字的立方和等于它本身
+        // ①数学方法
+        // 百位除以100取整，十位除10取整再除10取余，各位除10取余
+        // ②字符串方法
+        // 直接将原数字变为字符串，然后使用charAt()方法得到每个数位的值
+
+
+        // // 要求用户输入一个三位数
+        // var num = Number(prompt('请输入一个三位数'));
+
+        // // 对用户输入数字合法性的验证
+        // if (!isNaN(num) && num >= 100 && num <=999) {
+
+
+        //     // 数学方法
+        //     // // 百位
+        //     // var a = Math.floor(num / 100);
+
+        //     // // 十位
+        //     // var b = Math.floor(num / 10) % 10;
+
+        //     // // 各位
+        //     // var c = num % 10;
+
+        //     // 字符串方法
+        //     // 字符串转换
+        //     var str_num = num.toString();
+
+        //     // 百位
+        //     var a = str_num.charAt(0);
+
+        //     // 十位
+        //     var b = str_num.charAt(1);
+
+        //     // 个位
+        //     var c = str_num.charAt(2);
+
+
+
+        //     // 判断是否为水仙花数
+        //     if (Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3) == num) {
+                
+        //         alert(num + '是水仙花数');
+
+        //     }else {
+
+        //         alert(num + '不是水仙花数');
+
+        //     }
+
+        // } else {
+
+        //     alert('请输入一个合法的三位数');
+
+        // }
+
+
+
+        // // 游乐园门票计算
+        // // 游客输入年龄
+        // var age = Number(prompt('请输入年龄'));
+
+        // // 游客输入星期几,星期几用阿拉伯数字0,1,2,3,4,5,6表示,0表示星期天
+        // var days = Number(prompt('请输入对应的数字,星期几用阿拉伯数字0,1,2,3,4,5,6表示,0表示星期天'));
+
+        // // 判断用户输入的合法性
+        // if (age > 0 && days >= 0 && days <= 6) {
+
+        //     // // 星期几作为大前提
+        //     // // 周末
+        //     // if (days == 0 || days == 6) {
+
+        //     //     if (age >= 10) {
+
+        //     //         alert('门票500');
+
+        //     //     } else {
+
+        //     //         alert('门票210');
+
+        //     //     }
+        //     // } else { //平日
+
+        //     //     if (age >= 10) {
+
+        //     //         alert('门票300');
+
+        //     //     } else {
+
+        //     //         alert('门票140');
+
+        //     //     }
+        //     // }
+        //     // 年龄作为前提
+        //     // 大于10岁
+        //     if (age >= 10) {
+
+        //         if (days == 0 || days == 6) {
+
+        //             alert('门票500');
+
+        //         } else {
+
+        //             alert('门票300');
+
+        //         }
+
+        //     } else {
+
+        //         if (days == 0 || days == 6) {
+
+        //             alert('门票210');
+
+        //         } else {
+
+        //             alert('门票140');
+                    
+        //         }
+
+        //     }
+        //     // 小于10岁
+        // } else {
+
+        //     alert('请检查您的年龄和星期几对应的数字是否合法');
+
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

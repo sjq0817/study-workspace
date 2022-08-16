@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin: 100px;
+            
+        }
+        body{
+            height: 2000px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <div id="info">
+
+    </div>
+    <script>
+        var oBox = document.getElementById('box');
+        var oInfo = document.getElementById('info');
+        oBox.onmousemove = function(e){
+            oInfo.innerHTML = 'offsetX/Y' + e.offsetX + ',' + e.offsetY
+                                + '<br>' + 'clientx/Y' + e.clientX + ',' + e.clientY 
+                                + '<br>' + 'pageX/Y' + e.pageX + ',' + e.pageY;
+        };
+    </script>
+</body>
+</html>

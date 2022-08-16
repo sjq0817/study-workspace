@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1.什么是set
+        // 集合
+
+        // 数组是一系列有序的数据集合
+
+        // Set是一系列无序、没有重复值的数据集合
+        // const s = new Set();
+        // s.add(1);
+        // console.log(s);
+        // Set中不能有重复的成员
+
+        // Set没有下标去标示每一个值，所以Set是无序的，
+        // 也不能像数组那样通过下标去访问Set的成员
+
+        // 2.Set实例的方法和属性
+        // 1.方法
+        // 添加成员，add可以连缀着写
+        // const s = new Set();
+        // s.add(1).add(2);
+        // console.log(s);
+
+        // 是否有某个成员，has
+        // console.log(s.has(1));//true
+
+
+        // 删除指定成员，delete
+        // s.delete(1);
+        // 使用delete删除不存在的成员时，什么都不会发生，不会报错
+
+
+        // 清除所有成员，clear
+        // s.clear();
+
+        // 遍历Set，forEach
+        // s.forEach(function(value,key,set){
+        //     // Set中value = key
+        //     console.log(this);
+        // },document);
+        // 按照成员添加进集合的顺序遍历
+
+        // 2.属性
+        // 获得成员个数，size
+        // console.log(s.size);
+
+
+        // 3.Set构造函数的参数
+        // 1.数组
+        // const s = new Set([1,2,3]);
+        // console.log(s);
+
+        // 2.字符串、arguments、NodeList、Set等
+        // console.log(new Set('hi'));
+        // function func(){
+        //     console.log(new Set(arguments));
+        // }
+        // func(1,2,3,4,1);
+        // console.log(new Set(document.querySelectorAll('p')));
+        // const s = new Set([1,2]);
+        // const d = new Set(s);
+        // console.log(d);
+
+        // 4.Set的注意事项
+        // 1.判断重复的方式
+        // const s = new Set([1,2,1]);
+        // console.log(1 === 1);
+        // Set对重复值的判断基本遵循严格相等（===）
+        // 但是对于NaN的判断与 === 不同，Set中NaN等于NaN
+
+        // 2.什么时候使用Set
+        // 1.数组或字符串去重
+        // 2.不需要通过下标访问，只需要遍历时
+        // 3.为了使用Set提供的方法和属性时(add has forEach size delete clear等)
+        
+
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 监听窗口改变尺寸
+        window.onresize = function(){
+            var root = document.documentElement;
+            console.log('窗口改变尺寸了',root.clientWidth,root.clientHeight);
+        };
+        // 窗口卷动事件
+        window.onscroll = function(){
+            console.log('窗口卷动了',window.scrollY);
+        };
+
+
+        console.log('浏览器品牌',navigator.appName);
+        console.log('浏览器版本',navigator.appVersion);
+        console.log('用户代理',navigator.userAgent);
+        console.log('操作系统',navigator.platform);
+    </script>
+</body>
+</html>

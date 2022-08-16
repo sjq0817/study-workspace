@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>随机数</title>
+		
+	</head>
+	<body>
+        <script >
+			var list = [];
+ 
+			function random(m, n) {
+				var num = Math.floor(Math.random() * (m - n) + n);
+				return num;
+			}
+			for (var i = 0; i < 8; i++) {
+				var k = random(1, 47); 
+				list.push(k);
+				if (list.length == 8) {
+					document.write(list +"<br />");
+					document.write(list.length);
+				}
+			}
+		</script>
+ 
+	</body>
+</html>

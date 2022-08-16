@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 1.什么是模板字符串
+        // const username = 'alxe';
+        // // `alxe`
+        // const uesrname2 = `alxe`;
+
+        // // 2.模板字符串与一般字符串的区别
+        // // 和其他东西一起使用的时候，使用模板字符串，方便注入
+        // // 其他情况下使用模板字符串或者一般字符串都行
+        // const person = {
+        //     username:'Alex',
+        //     age:18,
+        //     sex:'male'
+        // };
+        // const info = `我的姓名是：${person.username},性别:${person.sex},年龄:${person.age}}`;
+        // console.log(info);
+
+
+            // 1.输出多行字符串
+            // 一般字符串
+            // const info = '第一行\n第二行';
+            // console.log(info);
+
+            // 模板字符串
+             // const info = `第一行\n第二行`;
+              // const info1 = `第一行
+                                // 第二行`;
+            // console.log(info);
+            // 模板字符串中，所有的换行、空格或者缩进都会被保留在输出之中
+
+            // 2.输出`和\等特殊字符
+            // const info = `\`\\`;
+            // console.log(info);
+
+            // 3.模板字符串的注入
+            // ${}
+            // const username = `alex`;
+            // const person = {age:18,sex:`male`};
+            // const getSex = function(sex){
+            //     return sex === `male`?`男`:`女`;
+            // };
+            // const info = `${username},${person.age + 2},${getSex(person.sex)}`;
+            // console.log(info);
+
+            // 只要最终可以得到一个值的就可以通过${}注入到模板字符串中
+
+
+
+
+    </script>
+</body>
+</html>

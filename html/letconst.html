@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let const的应用</title>
+    <style>
+        body{
+            padding: 50px 0 0 150px;
+
+        }
+        .btn{
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            font-size: 80px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">0</button>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+
+
+    <script>
+        // var btns = document.querySelectorAll('.btn');
+        // for (var i = 0;i < btns.length;i++){
+        //     btns[i].addEventListener('click',
+        //     function(){
+        //         console.log(i);
+        //     },
+        //     false);
+        // }
+
+        // var btns = document.querySelectorAll('.btn');
+        // for (var i = 0;i < btns.length;i++){
+        //     (function(index) {
+        //         btns[index].addEventListener('click',
+        //     function(){
+        //         console.log(index);
+        //     },
+        //     false);
+
+        //     })(i);
+           
+        // }
+
+         let btns = document.querySelectorAll('.btn');
+        for (let i = 0;i < btns.length;i++){
+            btns[i].addEventListener('click',
+            function(){
+                console.log(i);
+            },
+            false);
+        }
+
+
+
+    </script>
+</body>
+</html>
